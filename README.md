@@ -17,5 +17,7 @@ Our Docker image [m2-web-php](https://hub.docker.com/r/cloudlets/m2-web-php) on 
 In a containerised context, you should run cronjobs in a seperate container. We have published our cron container on Docker Hub. This image extends the m2-php-fpm by installing cron and starting the cron daemon at image boot. There is no need to add cronjobs in your Dockerfile; you can do this in Kubernetes itself. See step X.
 
 ## Step 3: Deploying on Kubernetes
-To deploy your Docker images to Kubernetes, you'll need manifests describing how your deployment should run and behave, how containers should interact. You will also use manifests to store credentials and add cronjobs. We have written example manifests.  
+To deploy your Docker images to Kubernetes, you'll need manifests describing how your deployment should run and behave, how containers should interact. You will also use manifests to store credentials and add cronjobs. 
+
+A lot of tools are automating the process of creating those yaml-manifests for you. We recommend using the CI/CD-option at [dashboard.cloudlets.io](dashboard.cloudlets.io) to deploy your Magento images to Kubernetes. If you want to deploy the hard way, have a look at the deployment.yaml in this repo. 
 TODO: manifests toevoegen
