@@ -19,5 +19,5 @@ In a containerised context, you should run cronjobs in a seperate container. We 
 ## Step 3: Deploying on Kubernetes
 To deploy your Docker images to Kubernetes, you'll need manifests describing how your deployment should run and behave, how containers should interact. You will also use manifests to store credentials and add cronjobs. 
 
-A lot of tools are automating the process of creating those yaml-manifests for you. We recommend using the CI/CD-option at [dashboard.cloudlets.io](dashboard.cloudlets.io) to deploy your Magento images to Kubernetes. If you want to deploy the hard way, have a look at the deployment.yaml in this repo. 
+A lot of tools are automating the process of creating those yaml-manifests for you. We recommend using the CI/CD-option at [dashboard.cloudlets.io](https://dashboard.cloudlets.io) to deploy your Magento images to Kubernetes. If you want to deploy the hard way, have a look at the deployment.yaml in this repo. 
 TODO: manifests toevoegen
