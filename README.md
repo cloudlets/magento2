@@ -5,7 +5,10 @@ We've built a set of Dockerfiles en Kubernetes manifests for running Magento 2 o
   - Setup your Magento project with composer. Please follow the instructions at [devdocs.magento.com](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html)
   - In the root of your Magento project, create a folder 'deployment'.
   - Add [auth.json](link) the the deployment folder. Auth.json contains the necessary credentials for pulling packages from Magento's composer repository.
+  - Add our init scripts init.sh, start.sh, init-cron.sh and start-cron.sh to the deployment folder. These files will be used in the next steps to initialize and start Magento and cronjobs.
 
-## Step 1: Our base image
+## Step 1: Extending our base image.
 Our Docker image [m2-web-php](https://hub.docker.com/r/cloudlets/m2-web-php) on Docker Hub will be your starting point. The image contains an Nginx webserver with php-fpm, optimized for use with Magento 2. When you're intending to run Magento 2 on Kubernetes, you would want to extend this image with your Magento 2 artifact. 
-  - example Dockerfile that extends our base image with the Magento codebase.
+  - Have a look at [our example Dockerfile](https://github.com/cloudlets/magento2/blob/master/examples/Magento2-application/Dockerfile) that extends our base image with the Magento codebase.
+    - The first FROM-statement, as its name *builder* indicates, is used to build the Magento artifact. Customize this part if you want to adjust the artifact to your project's needs.
+    - The second FROM-statement will build the Docker image that will be run your Magento application. 
